@@ -1,3 +1,4 @@
+#include <iostream>   
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -8,26 +9,22 @@ using namespace std;
 #define rep(i,n) for(int i=0;i<n;++i)
 #define s string
 
+int gcd(int a,int b){
+	if (b==0) return a;
+	return gcd(b,a%b);
+}
+
 int main(){
 	#ifndef ONLINE_JUGDE
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	freopen("error.txt","w",stderr);
 	#endif	
-	ll n,num=0,a=0;
-	r(n);
-	ll A[n]={};
-	rep(i,n) r(A[i]);
-	rep(i,n) num^=A[i];
-	ll temp=num;
-	ll i=0;
-	while(temp){
-		if(temp&1) break;
-		temp>>=1;
-		i++;
-	}
-	ll mask=(1<<i);
-	rep(i,n) if(A[i]&mask) a^=A[i];
-	cout<<(a^num)<<" "<<a; 
+	int a,b;
+	cin >> a >> b;
+	int m=max(a,b);
+	a+=b;
+	a-=m;
+	cout << gcd(m,a) << endl;
 	return 0;
 }
