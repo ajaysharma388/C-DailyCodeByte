@@ -52,8 +52,11 @@ int main()
 { 
    boost;
    Sieve();
-   int k;
-   cin>>k;
-   cout<<prime_vector[k-1]<<" ";
-   return 0;
+   int k,n;
+   cin >> n;
+   while(n--){
+    cin>>k;
+    cout<<prime_vector[k-1]<<endl;
+  }
+  return 0;
 }
