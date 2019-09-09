@@ -5,24 +5,6 @@ using namespace std;
 #define endl "\n"
 
 void printAllSubseq(int n,char *map,char *res,int i){
-	if(n<10){
-		if(n==0) i--;
-		else res[i]=map[n-1];
-		for(int k=i;k>=0;k--){
-			cout << res[k];
-		}
-		cout << endl;
-		return;		
-	}
-	if(n%100>26){
-		res[i] = map[n%10-1];
-		printAllSubseq(n/10,map,res,i+1);
-	}else{
-		res[i] = map[n%10-1];
-		printAllSubseq(n/10,map,res,i+1);
-		res[i] = map[n%100-1];
-		printAllSubseq(n/100,map,res,i+1);
-	} 
 }
 
 int main(){

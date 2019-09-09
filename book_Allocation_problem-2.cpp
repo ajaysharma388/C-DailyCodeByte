@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define endl "\n"
@@ -19,6 +19,11 @@ bool isPossible(int *a,int n,int s,int page){
 }
 
 int main(){
+	#ifndef ONLINE_JUGDE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	freopen("error.txt","w",stderr);
+	#endif
 	int testCases,books[100]={0};
 	cin>>testCases;
 	while(testCases--){
