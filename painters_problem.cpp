@@ -4,6 +4,7 @@ using namespace std;
 #define ll long long int
 #define endl "\n"
 
+
 bool isPossible(ll *board,ll n,ll time,ll k){
 	ll t=0,painter=1,i=0;
 	while(painter<=k && i<n){
@@ -20,7 +21,7 @@ bool isPossible(ll *board,ll n,ll time,ll k){
 }
 
 ll paint(ll *board,ll n,ll k){
-	ll ans=0,s=board[0],e=0;
+	ll ans=0,s=board[0],e=0,mod=10000003;
     for(ll i=0;i<n;++i){
         e+=board[i];
     }
@@ -33,7 +34,7 @@ ll paint(ll *board,ll n,ll k){
 			s=m+1;
 		}
 	}
-	return ans;
+	return ans%mod;
 }
 
 int main(){

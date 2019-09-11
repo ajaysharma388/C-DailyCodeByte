@@ -1,27 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long int
-#define endl "\n"
-
-bool check(int *a,int n){
-	return true;
-}
-
-int main(){
+int main() {
 	#ifndef ONLINE_JUGDE
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	freopen("error.txt","w",stderr);
 	#endif	
-	int n;
-	cin >> n;
-	if(n>0){
-		int *a = new int[n];
-		for(int i=0;i<n;++i){ 
-			cin >> a[i];
-		}
-		(check(a,n))?cout<<"ambiguous\n":"not ambiguous\n";
+	// your code goes here
+	int n,i;
+	
+	while(1){
+	    cin >> n;
+	    if(!n) break;
+	    int perm[n+1],inv_perm[n+1];
+	    for(i=1; i<=n; i++){
+	        cin >> perm[i];
+	        inv_perm[perm[i]] = i;
+	    }
+	    for(i=1; i<=n; i++)
+	        if(perm[i] != inv_perm[i]){
+	            cout << "not ambiguous" << endl;
+	            break;
+	        }
+	    if(i == n+1) cout << "ambiguous" << endl;
 	}
+	
 	return 0;
 }
