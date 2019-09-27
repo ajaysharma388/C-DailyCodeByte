@@ -12,16 +12,19 @@ int main(){
 	#endif	
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int t,n,xc,yc,xa,ya,xb,yb;
-    cin >> t;
+    int t,n,x1,x2,x3,y1,y2,y3;
+    cin>>t;
     while(t--){
-    	cin >> n >> xc >> yc >> xa >> ya >> xb >> yb;
-    	int d1,d2,d3;
-    	d1=sqrt((xc-xa)*(xc-xa)+(yc-ya)*(yc-ya));
-    	d2=sqrt((xc-xb)*(xc-xb)+(yc-yb)*(yc-yb));
-    	d3=sqrt((xa-xb)*(xa-xb)+(ya-yb)*(ya-yb));
-    	cout<<d1<<" "<<d2<<" "<<d3<<endl;
-    	if(d1<=n && d2)
-    }	
-	return 0;
+        cin>>n>>x1>>y1>>x2>>y2>>x3>>y3;
+        if((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)<=n*n
+        &&(x1-x3)*(x1-x3)+(y1-y3)*(y1-y3)<=n*n
+        ||(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)<=n*n
+        &&(x2-x3)*(x2-x3)+(y2-y3)*(y2-y3)<=n*n
+        ||(x3-x1)*(x3-x1)+(y3-y1)*(y3-y1)<=n*n
+        ||(x3-x2)*(x3-x2)+(y3-y2)*(y3-y2)<=n*n)
+           cout<<"yes"<<endl;
+        else 
+          cout<<"no"<<endl;
+    }
+    return 0;
 }
