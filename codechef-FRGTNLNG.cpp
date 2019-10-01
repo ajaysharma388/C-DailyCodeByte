@@ -13,42 +13,31 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int t,n,q,p;
+    string str;
+    string *dic = new string[1000];
+    bool *used = new bool[1000];
     cin >> t;
     while(t--){
         cin >> n >> q;
-        string *dic = new string[n];
-        bool *used = new bool[n];
         for(int i=0;i<n;++i){
             cin >> dic[i];
             used[i]=false;
         }
-        sort(dic,dic+n);
         while(q--){
             cin >> p;
             while(p--){
-                string temp;
-                cin >> temp;
-                int s=0,e=n;
-                while(s<=e){
-                    int m=(s+e)/2;
-                    if(dic[m]==temp){
-                        used[m]=true;
-                    }else if(dic[m]>temp){
-                        e=m-1;
-                    }else{
-                        s=m+1;
-                    }
-                }
+                cin >> str;
+                for(int i=0;i<n;++i)
+                    if(str==dic[i]) used[i]=true;
             }
         }
-        for(int i=0;i<n;++i){
-            if(used[i]){
-                cout << dic[i] << " ";
-            }
-        }
+        for(int i=0;i<n;++i)
+            (used[i])
+            ? cout<<"YES "
+            : cout<<"NO ";
         cout<<endl;
-        delete []dic;
-        delete []used;
     }
+    delete []dic;
+    delete []used;
     return 0;
 }
