@@ -12,13 +12,16 @@ int main(){
 	#endif	
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int a,o,k,t;
-    cin >> t;
-    while(t--){
-        cin >> a >> o >> k;
-        int x = max(a,o)-min(a,o);
-        if(x>k) cout<<x-k<<endl;
-        else cout<<"0"<<endl;  
+    int n,t;
+    cin >> n;
+    int *arr = new int[n];
+    for(int i=0;i<n;++i){
+    	cin >> arr[i];
     }
-    return 0;
+    cin >> t;
+    for(int i=0;i<n;++i){
+    	cout << arr[i] <<" ";
+    }
+    delete []arr; 
+	return 0;
 }
