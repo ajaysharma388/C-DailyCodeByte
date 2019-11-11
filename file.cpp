@@ -8,6 +8,7 @@ using namespace std;
 #define rep(i,n) for(int i=0;i<n;++i)
 #define s string
 ll a[1000005],prefixSum[1000005];
+
 int main(){
 	#ifndef ONLINE_JUGDE
 	freopen("input.txt","r",stdin);
