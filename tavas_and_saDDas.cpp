@@ -6,7 +6,6 @@ using namespace std;
 #define r(n) scanf("%d",&n)
 #define w(n) printf("%d ",n)
 #define rep(i,n) for(int i=0;i<n;++i)
-#define s string
 
 int main(){
 	#ifndef ONLINE_JUGDE
